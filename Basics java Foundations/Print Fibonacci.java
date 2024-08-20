@@ -11,8 +11,9 @@ int a=0;
 int b=1;
 
 for(int i=0;i<=num;i++){
-    System.out.println(" NUMBER Fibonacci IS   " +a);
     int c=a+b;
+    System.out.println(" NUMBER Fibonacci IS   " +a);
+   
     a=b;
     b=c;
 }
