@@ -81,7 +81,7 @@ public class stack {
                    break;
                  case 4:
                      default:
-                     System.out.println("Thank You ");
+                     System.out.println("Please Enter valid choice");
             }
         }while(choice!=3);    
     }
