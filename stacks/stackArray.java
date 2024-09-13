@@ -59,18 +59,17 @@ public class stack {
     }
     public static void main(String [] args){
         Scanner sc= new Scanner(System.in);
+        System.out.println("Stack Operations");
         System.out.println("Enter the size");
-       int size=sc.nextInt();
+        int size=sc.nextInt();
         stack st= new stack(size);
         int choice=0;
-     
-                    
         do{
-            System.out.println("Enter  choice 1. push 2. pop 3. disply");
+             System.out.println("Enter  Choice  1. Push   2. Pop  3. Disply");
             choice=sc.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the data");
+                    System.out.println("Enter The Data");
                     int data = sc.nextInt();
                     st.push(data);
                     break;
@@ -82,7 +81,7 @@ public class stack {
                    break;
                  case 4:
                      default:
-                     System.out.println("Sorry");
+                     System.out.println("Thank You ");
             }
         }while(choice!=3);    
     }
