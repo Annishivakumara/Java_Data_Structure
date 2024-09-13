@@ -70,7 +70,7 @@ public  void Display(){
                     break;
                 case 4:
                 default:
-                      System.out.println();
+                      System.out.println("Enter the valid Choice");
             }
         }while(choice<=4);
         
