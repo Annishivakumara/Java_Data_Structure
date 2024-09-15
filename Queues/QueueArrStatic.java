@@ -14,6 +14,7 @@ public void enque(int data ){
     }
     else if(rear==-1 && front==-1){
         rear=front=0;
+        arr[rear]=data;
     }
     else{
         rear+=1;
@@ -28,8 +29,9 @@ public void Deque(){
         front=rear=-1;
     }
     else{
-         front++;
-          System .out.println("deleted queue is"+arr[front]);
+         System .out.println("deleted queue is  >>"+arr[front++]);
+        
+         
     }
 
 }
@@ -39,23 +41,24 @@ public  void Display(){
         System .out.println("Queue is empty");
     }
     else {
-        for(int i=front;i<=rear;i--){
-        System.out.println(i);
+        for(int i=front;i<rear+1;i++){
+        System.out.println(arr[i]);
         }
     }
 }
 public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
+        System.out.println("Enter The Size Of the Queue");
         int size=sc.nextInt();
         Queue obj= new Queue(size);
         
         int choice;
         do{
-            System.out.println("Enter the choice");
+            System.out.println("Enter the choice  \n1.Insert The Data \n2.Delete Data \n3.Display");
             choice =sc.nextInt();
             switch (choice) {
                case 1:
-                   System.out.println("enter the data");
+                   System.out.println("Enter the data");
                    int data = sc.nextInt();
                    obj.enque(data);
                     break;
