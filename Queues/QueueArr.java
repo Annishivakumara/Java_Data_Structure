@@ -28,8 +28,6 @@ public void Deque(){
         front=rear=-1;
     }
     else{
-      
-        
          front++;
           System .out.println("deleted queue is"+arr[front]);
     }
@@ -46,13 +44,12 @@ public  void Display(){
         }
     }
 }
-    public static void main(String [] args){
+public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
         int size=sc.nextInt();
         Queue obj= new Queue(size);
         
         int choice;
-          
         do{
             System.out.println("Enter the choice");
             choice =sc.nextInt();
