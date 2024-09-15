@@ -29,8 +29,9 @@ public void Deque(){
         front=rear=-1;
     }
     else{
+         System .out.println("Deleted queue is"+arr[front]);
          front=(front+1)%size;
-          System .out.println("deleted queue is"+arr[front]);
+          
     }
 
 }
@@ -40,12 +41,9 @@ public  void Display(){
         System .out.println("Queue is empty");
     }
     else {
-       int i = front;
-            while (true) {
-                System.out.print(arr[i] + " ");
-                if (i == rear) break;
-                i = (i + 1) % size;
-        }
+      for(int i=front;i<=rear;i++){
+          System.out.println(arr[i]);
+      }
     }
 }
 public static void main(String [] args){
@@ -60,7 +58,7 @@ public static void main(String [] args){
             choice =sc.nextInt();
             switch (choice) {
                case 1:
-                   System.out.println("enter the data");
+                   System.out.println("Enter the data");
                    int data = sc.nextInt();
                    obj.enque(data);
                     break;
