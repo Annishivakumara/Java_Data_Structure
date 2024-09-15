@@ -30,7 +30,7 @@ public class stack {
         }
         else{
            top++;
-         number[top]=data;
+           number[top]=data;
            System.out.println("Push data  " +data);
         }
     }
@@ -46,7 +46,7 @@ public class stack {
            System.out.println("Deleted data"+del_data);
         }
         return del_data;
-    }
+    } 
     public void display(){
         if(top==-1){
             System.out.println("Stack is Over flow");
@@ -60,12 +60,12 @@ public class stack {
     public static void main(String [] args){
         Scanner sc= new Scanner(System.in);
         System.out.println("Stack Operations");
-        System.out.println("Enter the size");
+        System.out.println("Enter the size of the Stack");
         int size=sc.nextInt();
         stack st= new stack(size);
         int choice=0;
         do{
-             System.out.println("Enter  Choice  1. Push   2. Pop  3. Disply");
+             System.out.println("Enter  Choice  \n1. Push  \n2. Pop  \n3. Disply");
             choice=sc.nextInt();
             switch (choice) {
                 case 1:
@@ -82,7 +82,8 @@ public class stack {
                  case 4:
                      default:
                      System.out.println("Please Enter valid choice");
+                     break;
             }
-        }while(choice!=3);    
+        }while(choice<=4);    
     }
 }
