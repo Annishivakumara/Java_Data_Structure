@@ -19,6 +19,21 @@ public class LinkedList{
                first=node;
           }
      }
+      public void IE(int data){
+          Node newNode=new Node();
+          newNode.data=data;
+          newNode.link=null;
+          if(first==null){
+               first=newNode;
+          }
+          else{
+               Node temp=first;
+               while(temp.link!=null){
+                    temp=temp.link;
+                      }
+                    temp.link=newNode;
+               }
+          }
      public void display(){
           Node temp=first;
           if(first==null){
