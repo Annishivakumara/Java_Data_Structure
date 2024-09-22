@@ -63,13 +63,6 @@ public class LinkedList{
                     first=first.link;
           }
      }
-    //Deletion from the End of the list
-    public void DeleteEnd(){
-        
-    }
-    public void DeleteSpecific(){
-        
-    }
      public void DisplayList(){
           if(first==null){
                System.out.println("List is Empty ");
