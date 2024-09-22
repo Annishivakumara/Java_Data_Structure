@@ -10,7 +10,7 @@ int [] arr;
     }
 public void enque(int data ){
     if((rear+1)%size==front){
-        System.out.println("Queue becoming Full");
+        System.out.println("Queue is  Full");
     }
     else if(rear==-1 && front==-1){
         rear=front=0;
@@ -29,7 +29,7 @@ public void Deque(){
         front=rear=-1;
     }
     else{
-         System .out.println("Deleted queue is"+arr[front]);
+         System .out.println("Deleted Queue is"+arr[front]);
          front=(front+1)%size;
           
     }
