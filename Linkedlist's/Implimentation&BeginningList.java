@@ -61,6 +61,9 @@ public class LinkedList{
              case 3:
                   ll.DisplayList();
                   break;
+               case 4 :
+                    System.out.println("Exiting..");
+                    break;
           }
          }while(choice<=5);
      }
