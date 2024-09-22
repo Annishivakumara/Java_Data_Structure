@@ -29,7 +29,7 @@ public void Deque(){
         front=rear=-1;
     }
     else{
-         System .out.println("Deleted Queue is"+arr[front]);
+         System .out.println("Deleted Queue is ->"+arr[front]);
          front=(front+1)%size;
           
     }
