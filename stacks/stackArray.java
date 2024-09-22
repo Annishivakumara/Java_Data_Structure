@@ -65,7 +65,7 @@ public class stack {
         stack st= new stack(size);
         int choice=0;
         do{
-             System.out.println("Enter   Choice  \n1. Push  \n2. Pop  \n3. Disply");
+             System.out.println("Enter  the  Choice  \n1. Push  \n2. Pop  \n3. Disply");
             choice=sc.nextInt();
             switch (choice) {
                 case 1:
