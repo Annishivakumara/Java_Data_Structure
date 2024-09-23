@@ -6,10 +6,14 @@ class Node{
 public class LinkedList{
      Node node;
      Node first;
-     public void InsertFirst(int data){
+     public Node createNode(int data){
           node= new Node();
           node.data=data;
           node.link=null;
+          return node;
+      }
+     public void InsertFirst(int data){
+          node=createNode(data);
           if(first==null){
                first=node;
           }
@@ -19,27 +23,23 @@ public class LinkedList{
           }
      }
      public void InsertLast(int data){
-         Node LastNode= new Node();
-         LastNode.data=data;
-         LastNode.link=null;
+       node=createNode(data);
          if(first==null){
-             System.out.println("List is Completly Empty");
+             first=node;
          }
          else{
              Node End = first;
              while(End.link!=null){
                  End=End.link;
              }
-             End.link=LastNode;
+             End.link=node;
          }
      }
      public void InsertSpecific(int position , int data){
-         Node  spe_node = new Node();
-         spe_node.data=data;
-         spe_node.link=null;
+         node = createNode(data);
          if(position ==  1){
-             spe_node.link=first;
-             first=spe_node;
+             node.link=first;
+             first=node;
          }
          else{
              Node current=first;
@@ -48,8 +48,8 @@ public class LinkedList{
                  current=current.link;
                  count++;
              }
-             spe_node.link=current.link;
-             current.link=spe_node;
+             node.link=current.link;
+             current.link=node;
          }
      }
       //Deleting from Beginning of the list
@@ -81,7 +81,7 @@ public class LinkedList{
           int choice=0;
 
          do{ 
-              System.out.println("Enter the choice \n 1.Insert At first \n 2.Delete at first \n 3.Display  List Elemnts \n 4.Insert At Last \n 5. Inert at specific");   
+              System.out.println("Enter The Choice \n 1.Insert At first \n 2.Delete at fir\n 3.Display  List Elemnts \n 4.Insert At Last \n 5.Inert at specific");   
             choice = sc.nextInt();
           switch(choice){
            
