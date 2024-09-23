@@ -1,7 +1,6 @@
 import java.util.*;
 class Node{
      int data;
-     
      Node link;
 }
 public class LinkedList{
