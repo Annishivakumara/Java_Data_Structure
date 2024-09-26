@@ -81,7 +81,7 @@ public class LinkedList{
           int choice=0;
 
          do{ 
-              System.out.println("Enter The Choice \n 1.Insert At first \n 2.Delete at fir\n 3.Display  List Elemnts \n 4.Insert At Last \n 5.Inert at specific");   
+            System.out.println("Enter The Choice \n 1.Insert At first \n 2.Delete at fir\n 3.Display  List Elemnts \n 4.Insert At Last \n 5.Inert at specific");   
             choice = sc.nextInt();
           switch(choice){
            
