@@ -72,19 +72,18 @@ public class LinkedList{
              System.out.println("Null list");
          }
          if(first.link==null){
-             first=null;
              System.out.println("Deleted at last" +first.data);
+              first=null;
          }
          else{
              Node temp=first;
              while(temp.link.link!=null){
                  temp=temp.link;
-                 temp.link=null;
+             }
                  System.out.println("Deleted at last" +temp.link.data);
-                 
+              temp.link=null;
              }
          }
-         
      }
      public void DisplayList(){
           if(first==null){
