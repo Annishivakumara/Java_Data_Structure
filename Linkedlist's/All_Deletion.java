@@ -85,6 +85,33 @@ public class LinkedList{
              }
          }
      }
+ public void DeletedAtSpecific(int pos){
+          if(first==null){
+               System.out.println("List is Null");
+          }
+          else if(pos<1){
+               System.out.println("Enter the Valid posiion");
+          }
+          else if(pos==1){
+               System.out.println("Deleted data > "+first.data);
+            first=first.link;
+          }
+          else{
+               Node Current=first;
+               int count=1;
+               while(Current!=null && count< pos-1){
+                    Current=Current.link;
+                    count++;
+               }
+               if(Current ==null ||  Current.link==null){
+                    System.out.println("Enter the valid postion");
+               }
+               else{
+                    System.out.println("deleted pos"+pos+ " " +Current.link.data);
+                    Current.link=Current.link.link;
+               }
+          }
+     }
      public void DisplayList(){
           if(first==null){
                System.out.println("List is Empty ");
@@ -132,6 +159,9 @@ public class LinkedList{
             case 6 :
                 ll.DeleteLast();
                 break;
+               case 7:
+                    ll.DeletedAtSpecific();
+                    break;
           }
          }while(choice<=5);
      }
