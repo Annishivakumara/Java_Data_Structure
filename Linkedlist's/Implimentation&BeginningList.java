@@ -109,7 +109,7 @@ import java.util.*;
                     System.out.println("Enter the valid postion");
                }
                else{
-                    System.out.println("deledted pos"+pos+ " " +Current.link.data);
+                    System.out.println("deleted pos"+pos+ " " +Current.link.data);
                     Current.link=Current.link.link;
                }
           }
