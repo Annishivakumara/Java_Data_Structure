@@ -37,15 +37,37 @@ public class DoublyLinkedLIst{
           }
      }
      //Insert At SpecificPosition
-     public void InsertAtspecifc(){
+     public void InsertAtspecifc(int pos, int data){
           node=createNode(data);
-          if()
+          if(first==null){
+               if(pos==1){
+               first=last=node;
+               }else{
+                    System.out.println("List is Null");
+               }
+          }
+          else{
+               Node temp=first;
+               cnt=1;
+               while(temp!=null && cnt < pos-1){
+                   temp=temp.leftlink;
+                   cnt++;
+              }
+               node.leftlink=temp;
+               if(temp.rightLink!=null){
+               node.rightLink.leftlink=node;
+               node.rightLink=temp.rightLink;
+               temp.rightLink=node;
+          }else{
+               last=node;
+          }
+     }
      }
      //Delete at first
      public void DeleteFront(){
           if(first==null){
-               System.out.println("DoublyLinkedLIst is Null");
-          }else{
+              first=last=null;
+          }else if(){
                System.out.println("Deleted Data At Front >> " +first.data);
                first.leftLink=null;
           }
@@ -53,8 +75,7 @@ public class DoublyLinkedLIst{
      //Delete at last
      public void DeleteLast(){
           if(last==null){
-               System.out.
-               println("DoublyLinkedLIst is Null");
+               System.out.println("DoublyLinkedLIst is Null");
           }else{
                System.out.println("Deleted data At Last >> "+last.data);
                last.rightLink=null;
