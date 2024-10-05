@@ -1,133 +1,169 @@
 import java.util.*;
 class Node{
      int data;
-     Node leftLink ;
+     Node leftLink;
      Node rightLink;
 }
-public class DoublyLinkedLIst{
-     Node node;
-     Node first, last;
-     public Node createNode(int data){
-           node= new NOde();
-           node.data=data;
-           node.leftLink=null;
-           node.rightLink=null;
+
+  public class DoublyLinkedList{
+       Node node;
+       Node first , last;
+       public Node createNode(int data){
+            node=new Node();
+            node.data=data;
+            node.leftLink=null;
+            node.rightLink=null;
            return node;
-     }
-     //Insert at Front
-     public void InsertFront(int data){
-          node = createNode(data);
-           if(first==null){
+       }
+       public void InsertFront(int data){
+            node= createNode(data);
+            if(first==null){
+                 first=last=node;
+            }else{
+                 node.leftLink=first;
+                 first.rightLink=node;
+                 first=node;
+            }
+       }
+       public void InertLast(int data){
+            node=createNode(data);
+            if(last==null){
                 first=last=node;
-           }else{
-                node.leftLink=first;
-               first.rightLink=node;
-               first=node;
-           }
-     }
-     //Insert At Last
-     public void InserLast(int data){
-          node= createNode(data);
-          if(last==null){
-               first=last=node;
-          }else{
-               node.rightLink=last;
-               last.leftLink=node;
-               last=node;
-          }
-     }
-     //Insert At SpecificPosition
-     public void InsertAtspecifc(int pos, int data){
-          node=createNode(data);
-          if(first==null){
-               if(pos==1){
-               first=last=node;
-               }else{
-                    System.out.println("List is Null");
+            }else{
+                 node.rightLink=last;
+                 last.leftLink=node;
+                 last=node;
+            }
+       }
+       public void InsertAtSpecific(int data , int pos){
+            node = createNode(data);
+            if(first==null){
+                if(pos==1){
+                 first=last=node;
+                }else{
+               System.out.println("Last is Empty");
                }
-          }
-          else{
+            }
+            else if(pos==1){
+               node.rightLink=first;
+               first.leftLink=node;
+               first=node;
+            }else{
                Node temp=first;
-               cnt=1;
-               while(temp!=null && cnt < pos){
-                   temp=temp.leftlink;
-                   cnt++;
-              }
-               node.leftlink=temp;
-               if(temp.rightLink!=null){
-               node.rightLink.leftlink=node;
+               int cnt=1;
+               while(temp!=null && cnt<pos-1){
+                  temp=temp.rightLink;
+                  cnt++;
+               }
+               if(temp==null){
+                    System.out.println("Inavalid List");
+               }
+               node.leftLink=temp;
+               temp.rightLink.leftLink=node;
                node.rightLink=temp.rightLink;
                temp.rightLink=node;
-          }else{
-               last=node;
-          }
-     }
-     }
-     //Delete at first
-     public void DeleteFront(){
-          if(first==null){
-              first=last=null;
-          }else if(){
-               System.out.println("Deleted Data At Front >> " +first.data);
-               first.leftLink=null;
-          }
-     }
-     //Delete at last
-     public void DeleteLast(){
-          if(last==null){
-               System.out.println("DoublyLinkedLIst is Null");
-          }else{
-               System.out.println("Deleted data At Last >> "+last.data);
-               last.rightLink=null;
-          }
-     }
-     //Delete at SpecificPosition
-     public void DeleteAtspecific(){
-          
-     }
-     public void Display(){
-          
-     }
-     public static void main(String [] args){
-          Scanner sc = new Scanner (System.in);
-          DoublyLinkedLIst dl= new DoublyLinkedLIst();
-         
-          int choice=0;
-     do{
-          
-          System.out.println("Enter the Choice  1.InsertFront \n 2.InsertLast \n 3.InsertAtspecifc \n 4.DeleteFront \n 4.DeleteLast \n 5.DeleteAtspecific \n 6.Display");
-        choice =sc.nextInt();
-          switch (choice) {
+            }
+       }
+       public void DeleteAtSpecific(int pos){
+            if(first==null){
+               System.out.println("List is Null");
+            }else if(pos==1){
+               System.out.println("Deleteed At Position 1 "+first.data);
+               
+               // Additional
+               first=first.rightLink;   
+               if(first!=null){//no nessary condition for understanding pourpose
+                    first.leftLink=null;
+               }else{
+                    last=null;
+               }
+            }
+            else{
+               Node temp=first;
+               int cnt=1;
+               while(temp!=null && cnt<pos){
+                 temp=temp.rightLink;
+                 cnt++;
+                 }
+                 if(temp==null){
+                      System.out.println("Invalid Position.. ");
+                 }
+                 System.out.println("Deleted data:  >>" +temp.data);
+                  if(temp.rightLink!=null){
+                     temp.leftLink.rightLink=temp.rightLink;
+                  if(temp==last){
+                     last=last.leftLink;
+                 }}    
+             }
+             }
+           public void DeleteLast(){
+                if(last==null){
+                     System.out.println("List is Null");
+                }else{
+                    Node temp=last;
+                    System.out.println("Deleted Data >"+last.data);
+                    temp=temp.rightLink=null;
+                }
+           }
+           public void DeleteFront(){
+                if(first==null){
+                     System.out.println("Doubly Linked List is Nulll");
+                }else{
+                       Node temp=first;
+                       System.out.println("Deleted Data At Specific > "+temp.data);
+                       temp.leftLink=null;
+                }
+           }
+           public void Display(){
+                if(first==null){
+                     System.out.println("Doubly List is Empty");
+                }else{
+                  Node temp=first;
+                  while(temp!=null){
+                       System.out.println("Data in the List >>"+temp.data);
+                       temp=temp.rightLink;
+                  }
+                }
+           }
+       public static void main (String[] args) {
+        Scanner sc= new Scanner(System.in);
+        DoublyLinkedList dl= new DoublyLinkedList();
+        int choice=1;
+        do{
+             System.out.println("Entee the Choice 1.InsertFront \n 2.InertLast \n 3.InsertAtSpecific \n 4.DeleteAtSpecific \n 5.DeleteLast \n 6.DeleteFront \n 7.Display");
+             choice=sc.nextInt();
+             switch(choice){
                case 1:
-                    System.out.println("Enter the  First data");
-                    int data1=sc.nextInt();
-                    dl.InsertFront(data);
-                    break;
+                     
+                        System.out.println("Enter the  Inserting Front Data");
+                        int data=sc.nextInt();
+                        dl.InsertFront(data);
+                        break;
                case 2:
-                    System.out.println("Enter the  Last data ");
-                    int data2=sc.nextInt();
-                    dl.InsertLast(data);
-                    break;
+                        System.out.println("Enter the Inserting Last Data");
+                        int data1=sc.nextInt();
+                        dl.InertLast(data1);
+                        break;
                case 3:
-                    System.out.println("Enter The InsertAtspecifc 1. Position \n 2. Data");
-                    int Pos=sc.nextInt();
-                    int data3=sc.nextInt();
-                    dl.InsertAtspecifc(Pos, data3);
-                    break;
+                        System.out.println("Enter the InsertingAt Specific Last  1.Data \n 2.Position");
+                        int data3=sc.nextInt();
+                        int pos= sc.nextInt(); 
+                        dl.InsertAtSpecific(data3, pos);
+                        break;
                case 4:
-                    dl.DeleteFront();
-                    break;
+                        int pos1=sc.nextInt();
+                        dl.DeleteAtSpecific(pos1);
+                        break;
                case 5:
-                    dl.DeleteLast();
-                    break;
-               case 6:
-                    System.out.println("Enter DeleteAtSpecific 1.position  ");
-                    int pos=sc.nextInt();
-                    dl.DeleteAtspecific(pos);
-                    break
+                        dl.DeleteLast();
+                        break;
+               case 6: 
+                         dl.DeleteFront();
+                         break;
                case 7:
-                    dl,Display();
-                    break;
-          }
-     }while(choice<=10);
-}
+                        dl.Display();
+                        break;
+             }
+        }while(choice<=3);
+       }
+  }
