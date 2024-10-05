@@ -89,10 +89,10 @@ import java.util.*;
      }
      public void DeletedAtSpecific(int pos){
           if(first==null){
+               if(pos<1){
+               System.out.println("Enter the Valid posiion");
                System.out.println("List is Null");
           }
-          else if(pos<1){
-               System.out.println("Enter the Valid posiion");
           }
           else if(pos==1){
                System.out.println("Deleted data > "+first.data);
