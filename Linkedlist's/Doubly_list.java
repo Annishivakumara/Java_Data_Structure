@@ -4,7 +4,6 @@ class Node{
      Node leftLink;
      Node rightLink;
 }
-
   public class DoublyLinkedList{
        Node node;
        Node first , last;
