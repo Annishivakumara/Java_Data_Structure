@@ -151,7 +151,6 @@ class Node{
              choice=sc.nextInt();
              switch(choice){
                case 1:
-                     
                         System.out.println("Enter the  Inserting Front Data");
                         int data=sc.nextInt();
                         dl.InsertFront(data);
