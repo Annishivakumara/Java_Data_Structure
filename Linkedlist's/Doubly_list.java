@@ -93,9 +93,7 @@ class Node{
                  if(temp==null){
                       System.out.println("Invalid Position.. ");
                  }
-                 
                  System.out.println("Deleted data:  >>" +temp.data);
-                 
                    if(temp.leftLink!=null){
                         temp.leftLink.rightLink=temp.rightLink;
                    }
