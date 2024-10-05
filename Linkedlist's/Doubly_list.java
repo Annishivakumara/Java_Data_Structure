@@ -49,7 +49,7 @@ public class DoublyLinkedLIst{
           else{
                Node temp=first;
                cnt=1;
-               while(temp!=null && cnt < pos-1){
+               while(temp!=null && cnt < pos){
                    temp=temp.leftlink;
                    cnt++;
               }
