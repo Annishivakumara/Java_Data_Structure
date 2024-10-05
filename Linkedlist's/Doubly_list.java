@@ -1,4 +1,3 @@
-
 import java.util.*;
 class Node{
      int data;
@@ -74,7 +73,6 @@ class Node{
                System.out.println("List is Null");
             }else if(pos==1){
                System.out.println("Deleteed At Position 1 "+first.data);
-               
                // Additional
                first=first.rightLink;   
                if(first!=null){//no nessary condition for understanding pourpose
