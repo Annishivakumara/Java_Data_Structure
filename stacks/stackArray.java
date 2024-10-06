@@ -78,15 +78,16 @@ public class stack {
                     st.push(data);
                     break;
                 case 2:
-                   System.out.println(st.pop());
-                   break;
+                  System.out.println(st.pop());
+                    break;
                  case 3:
-                   st.display();
-                   break;
-                 case 4:
+                    st.display();
+                    break;
+                case 4:
+                    st.Top();
+                    break;
                      default:
                      System.out.println("Please Enter valid choice");
-                     break;
             }
         }while(choice<=4);    
     }
