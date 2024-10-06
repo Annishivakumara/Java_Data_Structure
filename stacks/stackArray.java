@@ -47,6 +47,10 @@ public class stack {
         }
         return del_data;
     } 
+    public int Top(){
+       return number[top]; 
+    }
+    
     public void display(){
         if(top==-1){
             System.out.println("Stack is Over flow");
