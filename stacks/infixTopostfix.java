@@ -57,7 +57,7 @@ public class InfixToPostfix{
                      while(st.topElement()!='('){
                          postfix+=st.pop(); 
                      }
-                    st.pop();
+                    st.pop();//  it removes the opening parenthesis ( from the stack, but it is not added to the postfix string
                    } else {
                    while(precedenc(st.topElement()) >= precedenc(ch)){
                         postfix+=st.pop();
