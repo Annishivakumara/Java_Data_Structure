@@ -43,6 +43,7 @@ public class  StackUsingSinglyList{
      public int TopElement(){
           return first.data;
      }
+     
 public static void main(String [] args){
      Scanner sc = new Scanner (System.in);
      StackUsingSinglyList sd= new StackUsingSinglyList();
@@ -63,7 +64,7 @@ public static void main(String [] args){
                sd.Display();
                break;
           case 4:
-               sd.TopElement();
+               System.out.println("Top data In The List"+sd.TopElement());
                break;
      }
 }while(choice<=10);
