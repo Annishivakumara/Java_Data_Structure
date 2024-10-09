@@ -15,4 +15,3 @@ public class Recursion{
         PrintNumber(1,num);
     }
 }
-
