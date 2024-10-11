@@ -1,17 +1,16 @@
-import java.util.*;
+import  java.util.Scanner;
+
 public class Recursion{
-    public static void PrintNumber(int i, int num){
-        if(i>num){
-            return;
-        }
-        System.out.println(i);
-        PrintNumber(i+1,num);
-        
+    public static  void  PrintNUmber(int i int name){
+    if(i>name){
+    return;
+    }
+    System.out.println(i);
+    Recursion(i+1,name);
     }
     public static void main(String [] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Number");
-        int num= sc.nextInt();
-        PrintNumber(1,num);
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the NUmber: ");
+        int name=sc.nextInt();
+        PrintNumber(1,name);
     }
-}
