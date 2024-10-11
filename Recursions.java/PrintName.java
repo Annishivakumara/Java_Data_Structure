@@ -1,5 +1,4 @@
                           #print Name N(5) Times 
-
                             
 import java.util.*;
  class Recursion{
@@ -13,11 +12,10 @@ import java.util.*;
      PrintName(i+1,n);
         count++;
  }
- 
  public static void main(String [] args){
      Scanner sc= new Scanner (System.in);
       Recursion obj= new Recursion();
       int n= sc.nextInt();
       PrintName(1,n);
- }
+    }
  }
