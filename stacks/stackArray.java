@@ -1,7 +1,8 @@
-import java.util.*;
+import java.util.*; // importing java pacakage 
+
 public class stack {
-    int size ;
-    int top;
+    int size ; // size  of the array declaration
+    int top;  //  top  represents index value o fthe array
     int[] number ;
     public stack(int size){
         this.size=size;
