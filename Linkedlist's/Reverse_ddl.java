@@ -30,7 +30,7 @@ class Node{
                 }else{
                        Node temp=first;
                        System.out.println("Deleted Data At Specific >"+temp.data);
-                      temp= temp.rightLink;
+                      temp = temp.rightLink;
                       if(temp!=null){
                        temp.leftLink=null;
                       }else{
@@ -54,7 +54,7 @@ class Node{
         DoublyLinkedList dl= new DoublyLinkedList();
         int choice=1;
         do{
-             System.out.println("Enter the Choice \n 1.Insert At First \n2DIsplay \n 3.DeleteFron ");
+             System.out.println("Enter the Choice \n 1.Insert At First \n 2.DeleteFront \n 3.Display ");
              choice=sc.nextInt();
              switch(choice){
                   case 1:
@@ -73,4 +73,5 @@ class Node{
                     
              }
         }while(choice<=3);
-             }}
+             }
+  }
