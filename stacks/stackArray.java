@@ -3,14 +3,14 @@ import java.util.*; // importing java pacakage
 public class stack {
     int size ; // size  of the array declaration
     int top;  //  top  represents index value o fthe array
-    int[] number ;
-    public stack(int size){
+    int[] number ;  // array declaration 
+    public stack(int size){  // constructor 
         this.size=size;
-        top=-1;
-        number= new int[size];
+        top=-1;  // top first value is -1
+        number= new int[size]; 
     }
-    public boolean isFull(){
-        if(top==size-1){
+    public boolean isFull(){  
+        if(top==size-1){  // checking total size -1  if yes then is's Array is full
             return true;
         }
         else{
