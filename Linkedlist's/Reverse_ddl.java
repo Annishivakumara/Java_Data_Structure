@@ -14,16 +14,54 @@ class Node{
             node.rightLink=null;
            return node;
        }
-       public void InsertFront(int data){
+      
+           public void push(int data){
+           node= createNode(data);
+           if(first==null){
+                first=node;
+           }else{
+                node.rightLink=first;
+                first=node;
+           }
+     }
+     public void pop(){
+          if(first==null){
+               System.out.println("List is Empty");
+          }else{
+               System.out.println("Poped data is  Top data: " +first.data);
+               first=first.rightLink;
+          }
+     }
+      public void InsertFront(int data){
            node= createNode(data);
             if(first==null){
                  first=last=node;
             }else{
+                 
                  node.rightLink=first;
                  first.leftLink=node;
                  first=node;
             }
        }
+       public void Reverse(){
+            
+            if(first==null){
+               first=last=node;
+            }
+            else{
+            Node temp=first;
+            while(temp.rightLink!=null){
+                      push(temp.data);
+                      temp=temp.rightLink;}
+            }
+            Node temp=first;
+            while(temp!=null){
+               
+                 pop(temp.data);
+                 temp=temp.rightLink;
+            }
+            }
+       
          public void DeleteFront(){
                 if(first==null){
                      System.out.println("Doubly Linked List is Nulll");
@@ -52,6 +90,7 @@ class Node{
              public static void main (String[] args) {
         Scanner sc= new Scanner(System.in);
         DoublyLinkedList dl= new DoublyLinkedList();
+       
         int choice=1;
         do{
              System.out.println("Enter the Choice \n 1.Insert At First \n 2.DeleteFront \n 3.Display ");
@@ -70,7 +109,10 @@ class Node{
                       break;
                     default:
                     System.out.println("Enter the VSlid ");
-                    
+               case 4:
+                    dl.Reverse();
+                    break;
+               
              }
         }while(choice<=3);
              }
