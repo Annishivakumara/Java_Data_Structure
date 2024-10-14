@@ -1,5 +1,5 @@
-
 import java.util.*;
+
 public  class BalancingSymbol {
 	static int  top;
 	int size;
@@ -24,11 +24,11 @@ public  class BalancingSymbol {
 	public static void main(String [] args) {
 		Scanner sc= new Scanner(System.in);
 		char symb;
-	     System.out.println("Enter the Symbol Expression");
-          String symbol=sc.nextLine();
-          int length=symbol.length();
-          BalancingSymbol bs= new  BalancingSymbol(length);
-          for(int i=0;i<symbol.length();i++){
+	        System.out.println("Enter the Symbol Expression");
+                    String symbol=sc.nextLine();
+                    int length=symbol.length();
+                    BalancingSymbol bs= new  BalancingSymbol(length);
+               for(int i=0;i<symbol.length();i++){
                symb=symbol.charAt(i);
                
                if(symb=='{'|| symb=='['|| symb=='('){
@@ -45,9 +45,8 @@ public  class BalancingSymbol {
                else if(symb=='}' || symb==')' || symb==']'){
                     System.out.println("Symbol's Are not Balanced");
                     return;
-               }
-               }
-               
+	       }
+	       }
                     if (bs.isEmpty()) {
                     System.out.println("Symbols are Balanced");
                           } else {
