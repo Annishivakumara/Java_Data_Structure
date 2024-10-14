@@ -13,12 +13,12 @@ class stack{
      public char pop(){
           return ch[top--];
      }
-public char topElement() {
+     public char topElement() {
         return ch[top];
     }
-public  boolean isEmpty(){
+     public  boolean isEmpty(){
      return top==-1;
-}
+  }
 }
 public class InfixToPostfix{
      public static int precedenc(char ch){
@@ -36,7 +36,8 @@ public class InfixToPostfix{
                     prec=3;
                     break;
           }
-          return prec;}
+          return prec;
+     }
      public static void main(String [] args){
          Scanner sc=new Scanner(System.in);
          System.out.println("Enter the Infix Expression: ");
