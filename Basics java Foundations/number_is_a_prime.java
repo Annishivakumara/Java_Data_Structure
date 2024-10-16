@@ -16,6 +16,6 @@ public class Main{
         System.out.println("PRIME NUMBER");
         else
           System.out.println(" NOT PRIME NUMBER");
-}
-}
+        }
+        }
 }
