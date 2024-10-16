@@ -9,13 +9,8 @@ class Stack{
         arr= new int[size];
         }
         public void Push(int data){
-            if(top==size-1){
-                System.out.println("Stack is Full");
-            }else{
-                top=top+1;
-                arr[top]=data;
-            }
-        }
+		arr[top]=data;
+	}
         public int pop(){
             int data=0;
             if(top==-1){
