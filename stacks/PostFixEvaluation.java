@@ -9,17 +9,17 @@ import java.util.*;
                  arr= new int[size];
              }
         public void Push(int data){
-		arr[top]=data;
-	}
+		 arr[top]=data;
+	     }
         public int pop(){
-            int data=0;
-            if(top==-1){
+             int data=0;
+             if(top==-1){
                 System.out.println("Stack is Empty");
-            }else{
+             }else{
                 data=arr[top--];
-            }
+             }
             return data;
-        }
+	}
 }
 public class PostFixEvaluation {
     public static int compute(int op1, char ch, int op2){
