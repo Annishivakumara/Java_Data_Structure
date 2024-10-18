@@ -1,7 +1,7 @@
 import java.util.*;
-class Stack{
-	int arr[];
-	int top;
+     class Stack{
+	    int arr[];
+	    int top;
 	int size;
 	public  Stack(int size){
         this.size=size;
