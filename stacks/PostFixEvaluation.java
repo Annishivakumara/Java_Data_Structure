@@ -1,13 +1,13 @@
 import java.util.*;
-     class Stack{
-	    int arr[];
-	    int top;
-	int size;
-	public  Stack(int size){
-        this.size=size;
-        top=-1;
-        arr= new int[size];
-        }
+       class Stack{
+	     int arr[];
+	     int top;
+	     int size;
+             public  Stack(int size){
+                 this.size=size;
+                 top=-1;
+                 arr= new int[size];
+             }
         public void Push(int data){
 		arr[top]=data;
 	}
