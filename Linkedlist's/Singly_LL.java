@@ -132,7 +132,7 @@ import java.util.*;
        LinkedList ll= new LinkedList();
        
        do{
-    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Fornt\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific ");
+    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific ");
             choice=sc.nextInt();
             switch(choice){
             case 1:
