@@ -29,13 +29,9 @@ public void Deque(){
         front=rear=-1;
     }
     else{
-         System .out.println("deleted queue is  >>"+arr[front++]);
-        
-         
+         System .out.println("deleted queue is  >>"+arr[front++]);    
     }
-
 }
-
 public  void Display(){
     if(rear==-1 && front==-1){
         System .out.println("Queue is empty");
@@ -68,7 +64,6 @@ public static void main(String [] args){
                 case 3:
                     obj.Display();
                     break;
-                case 4:
                 default:
                       System.out.println("Enter the valid Choice");
             }
