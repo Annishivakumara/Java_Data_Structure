@@ -40,7 +40,7 @@ class Node{
                 if(pos==1){
                  first=last=node;
                 }else{
-               System.out.println("Last is Empty");
+               System.out.println("List is Empty");
                }
             }
             else if(pos==1){
