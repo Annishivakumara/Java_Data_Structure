@@ -12,42 +12,45 @@ public class QueueUsingSlist{
             node.link=null;
             return node;
        }
-       public void enqueue(int data){
-            node= createNode(data);
-                 if(first==null){
-                      first=node;
-                 }else{
-                      first.link= node;
-                      first=node;
-            }
-       }
-       public void Dequeue(){
-            if(first==null){
-               System.out.print("Queue is Empty");
-               
-            }else if(first.link==null){
-                 System.out.print("Delted data "+first.data);
-                 first=null;
-            }else{
-                 Node temp=first;
-                 while(temp.link.link!=null){
-                      temp=temp.link;
-                 }
-                 System.out.println("Data in the Queue: "+temp.link.data);
-                 temp.link=null;
-            }
-       }
-       public void display(){
-            if(first==null){
-                 System.out.println("Queue is Empty");
-            }else{
-            Node temp=first;
-            while(temp!=null){
-                 System.out.println("Data in the Queue: "+temp.data);
+        public void enqueue(int data){
+           node=createNode(data);
+           if(first==null){
+                first=node;
+           }
+           else{
+                node.link=first;
+                first=node;
+           }
+      }
+          public void Dequeue(){
+         if(first==null){
+             System.out.println("Null list");
+         }
+         if(first.link==null){
+                System.out.println("Deleted at last" +first.data);
+             first=null;
+         }
+         else{
+             Node temp=first;
+             while(temp.link.link!=null){
                  temp=temp.link;
-            }
-       }
-       }
+             }
+                 System.out.println("Deleted at last" +temp.link.data);
+                  temp.link=null;
+         }
+     }
+        public void display(){
+          if(first==null){
+               System.out.println("List is Null");
+          }
+          else{
+               Node temp=first;
+               while(temp!=null){
+                    System.out.println("data in list > "+temp.data);
+                    temp=temp.link;
+               }
+          }
+     }
         
        public static void main(String [] args){
             Scanner sc= new Scanner(System.in);
@@ -70,6 +73,5 @@ public class QueueUsingSlist{
                           break;
                  }
             }while(choice<=10);
-            
        }
 }
