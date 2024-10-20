@@ -23,7 +23,7 @@ public class  StackUsingSinglyList{
      }
      public void pop(){
           if(first==null){
-               System.out.println("List is Empty");
+               System.out.println("Stack  is Empty");
           }else{
                System.out.println("Poped data is  Top data: " +first.data);
                first=first.link;
