@@ -25,7 +25,7 @@ import java.util.*;
       public void InsertEnd(int data){
            node= createNode(data);
            if(first==null){
-                System.out.println("List is Empry");
+                System.out.println("List is Empty");
            }
            else{
                 Node temp= first;
@@ -63,7 +63,7 @@ import java.util.*;
                 System.out.println("List is Empty");
            }
            else{
-                System.out.println("De;eted data   > "  +first.data );
+                System.out.println("Deleted data   > "  +first.data );
                first=first.link;
            }
       }
