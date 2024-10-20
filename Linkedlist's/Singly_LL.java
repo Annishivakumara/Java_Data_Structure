@@ -74,18 +74,15 @@ import java.util.*;
          if(first.link==null){
                 System.out.println("Deleted at last" +first.data);
              first=null;
-            
          }
          else{
              Node temp=first;
              while(temp.link.link!=null){
                  temp=temp.link;
              }
-                
                  System.out.println("Deleted at last" +temp.link.data);
                   temp.link=null;
          }
-         
      }
      public void DeletedAtSpecific(int pos){
           if(first==null){
