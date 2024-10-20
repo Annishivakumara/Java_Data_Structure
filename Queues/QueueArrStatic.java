@@ -10,7 +10,7 @@ int [] arr;
     }
 public void enque(int data ){
     if(rear==size-1){
-        System.out.println("Queue becoming Full");
+        System.out.println("Queue  Full");
     }
     else if(rear==-1 && front==-1){
         rear=front=0;
