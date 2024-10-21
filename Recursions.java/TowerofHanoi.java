@@ -16,3 +16,20 @@ public class Recursion{
         
     }
 }
+/*
+---#or
+       public class recursion{
+    public static void shiftdisk(int n, char TA,char TB,char TC){
+        if(n==1){
+            System.out.println("Disk  1 is Shifted from "+TA+" To "+TC);
+        }else{
+            shiftdisk(n-1,TA,TC,TB);
+            System.out.println("Movet to DISK  "+n+  " From " +TA+ " is Shifted to  "+TC);
+            shiftdisk(n-1,TB,TA,TC);
+        }
+    }
+    public static void main(String [] args){
+        shiftdisk(3,'a','b','c');
+    }
+}
+*/
