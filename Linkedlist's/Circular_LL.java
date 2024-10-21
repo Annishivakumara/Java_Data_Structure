@@ -5,20 +5,20 @@ import java.util.*;
  }
  public class LinkedList{
       Node node;
-      Node first=null;
-      Node last=null;
+      Node first;
+      Node last;
       public Node createNode(int data){
            node=new Node();
            node.data=data;
            node.link=null;
-           return node;
+          return node;
       }
       public void insertFront(int data){
            node=createNode(data);
            if(first==null){
                 first=node;
                 last=node;
-               // node.link=first;     
+                node.link=first;
            }
            else{
                 node.link=first;
@@ -29,14 +29,16 @@ import java.util.*;
       public void InsertEnd(int data){
            node= createNode(data);
            if(first==null){
-                System.out.println("List is Empry");
+                System.out.println("List is Empty");
            }
            else{
-                Node temp= first;
+                Node temp=first;
                 while(temp.link!=null){
                      temp=temp.link;
                 }
                 temp.link=node;
+                temp=node;
+                last.link=first;
            }
       }
       public void InsertSpecific( int pos, int data){
@@ -62,35 +64,35 @@ import java.util.*;
                current.link=node;}
            }
       }
-      public void DeleteFront(){
-           if(first==null){
-                System.out.println("List is Empty");
-           }
-           else{
-                System.out.println("De;eted data   > "  +first.data );
-               first=first.link;
-           }
-      }
-      public void DeleteLast(){
-         if(first==null){
-             System.out.println("Null list");
-         }
-         if(first.link==null){
-                System.out.println("Deleted at last" +first.data);
-             first=null;
-            
-         }
-         else{
-             Node temp=first;
-             while(temp.link.link!=null){
-                 temp=temp.link;
-             }
-                
-                 System.out.println("Deleted at last" +temp.link.data);
-                  temp.link=null;
-         }
-         
-     }
+     public void DeleteFront() {
+        if (first == null) {
+            System.out.println("List is empty");
+        } else {
+            System.out.println("Deleted data " + first.data);
+            if (first == last) {
+                first = last = null; 
+            } else {
+                first = first.link;
+                last.link = first; 
+            }
+        }
+    }
+      public void DeleteLast() {
+        if (first == null) {
+            System.out.println("List is empty");
+        } else if (first == last) {
+            System.out.println("Deleted data > " + last.data);
+            first = last = null;
+        } else {
+            Node temp = first;
+            while (temp.link != last) {
+                temp = temp.link;
+            }
+            System.out.println("Deleted data > " + last.data);
+            last = temp;
+            last.link = first; 
+        }
+    }
      public void DeletedAtSpecific(int pos){
           if(first==null){
                if(pos<1){
@@ -124,10 +126,10 @@ import java.util.*;
           }
           else{
                Node temp=first;
-               do{
+               while(temp.link!=null){
                     System.out.println("data in list > "+temp.data);
                     temp=temp.link;
-               }while(temp!=first);
+               }
           }
      }
       public static void main(String [] args){
@@ -136,7 +138,7 @@ import java.util.*;
        LinkedList ll= new LinkedList();
        
        do{
-    System.out.println("Enter the choice \n1.Insert Front\n2.Delete Fornt\n3.Display \n4.InsertAt end\n5.dlete End\n6.Insert At specific\n7.Delete at Specific ");
+    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific ");
             choice=sc.nextInt();
             switch(choice){
             case 1:
