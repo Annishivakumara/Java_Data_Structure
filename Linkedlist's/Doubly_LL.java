@@ -95,7 +95,7 @@ class Node{
                         temp.leftLink.rightLink=temp.rightLink;
                    }
                   if(temp.rightLink!=null){
-                     temp.rightLink.leftLink=temp.rightLink;
+                     temp.rightLink.leftLink=temp.leftlink;
                   }
                   if(temp==last){
                      last=last.leftLink;
