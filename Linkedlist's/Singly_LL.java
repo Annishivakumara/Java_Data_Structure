@@ -93,7 +93,7 @@ import java.util.*;
           }
           else if(pos==1){
                System.out.println("Deleted data > "+first.data);
-            first=first.link;
+               first=first.link;
           }
           else{
                Node Current=first;
