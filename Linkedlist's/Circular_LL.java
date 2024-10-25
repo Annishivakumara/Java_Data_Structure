@@ -3,7 +3,7 @@ import java.util.*;
       int data;
       Node link;
  }
- public class LinkedList{
+     public class LinkedList{
       Node node;
       Node first;
       Node last;
@@ -63,7 +63,7 @@ import java.util.*;
                node.link=current.link;
                current.link=node;}
            }
-      }
+         }
      public void DeleteFront() {
         if (first == null) {
             System.out.println("List is empty");
