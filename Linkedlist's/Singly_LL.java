@@ -111,6 +111,22 @@ import java.util.*;
                }
           }
      }
+  public void search(int data){
+  Node temp=first;
+   if(temp==null){
+    System.out.println("LIST IS NULL");
+   }else{
+    while(temp!=null){
+     if(temp.data==data){
+      System.out.println("Data Found");
+   }
+     break;
+    }
+    if(temp==null){
+     System.out.println("Data not Found");
+    }
+   }
+  }
      public void Display(){
           if(first==null){
                System.out.println("List is Null");
@@ -129,7 +145,7 @@ import java.util.*;
        LinkedList ll= new LinkedList();
        
        do{
-    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific ");
+    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific \n8.Search the Element");
             choice=sc.nextInt();
             switch(choice){
             case 1:
@@ -162,10 +178,15 @@ import java.util.*;
                int pos2=sc.nextInt();
                ll.DeletedAtSpecific(pos2);
                break;
+         case 8:
+              System.out.println("Searching Data:  Enter the Data ");
+              int data3= sc.nextInt();
+              ll.search(data3);
+              break;
           default:
           System.out.println("Enter the valid Choice");
        }  
-       }while(choice<=8);
+       }while(choice<=9);
        
       }
  }
