@@ -1,8 +1,9 @@
+package Queue;
 import java.util.*;
-public class Queue{
+public class cirqueue{
 int front , rear, size;
 int [] arr;
-    public Queue(int size){
+    public cirqueue(int size){
         this.size=size;
         arr=new int[size];
         front=-1;
@@ -48,9 +49,9 @@ public  void Display(){
 }
 public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
-          System.out.println("Enter The Size of The Queue");
+          System.out.println("Enter The Size of The  Circular Queue");
         int size=sc.nextInt();
-        Queue obj= new Queue(size);
+        cirqueue obj= new cirqueue(size);
         
         int choice;
         do{
