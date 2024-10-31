@@ -60,7 +60,6 @@ class Node{
                  temp=temp.rightLink;
             }
             }
-       
          public void DeleteFront(){
                 if(first==null){
                      System.out.println("Doubly Linked List is Nulll");
