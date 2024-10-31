@@ -14,7 +14,6 @@ class Node{
             node.rightLink=null;
            return node;
        }
-
            public void push(int data){
            node= createNode(data);
            if(first==null){
