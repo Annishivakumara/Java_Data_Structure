@@ -54,6 +54,7 @@ public class PostFixEvaluation {
             st.Push(compute(op1, ch, op2));
           }
       }
+	    
       int eval_result=st.pop();
 System.out.println("PostFix Expression is for single digit >"+eval_result);
     }
