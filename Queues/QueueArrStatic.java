@@ -26,6 +26,7 @@ public void Deque(){
         System.out.println("Queue is Empty");
     }
     else if(rear==front){
+        System.out.println("Deleted data >> " +arr[front]);
         front=rear=-1;
     }
     else{
