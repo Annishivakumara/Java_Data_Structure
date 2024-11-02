@@ -1,9 +1,10 @@
+
 import java.util.*;
  class Node{
       int data;
       Node link;
  }
- public class LinkedList{
+ public class linkedlist{
       Node node;
       Node first;
       public Node createNode(int data){
@@ -111,22 +112,26 @@ import java.util.*;
                }
           }
      }
-  public void search(int data){
-  Node temp=first;
-   if(temp==null){
-    System.out.println("LIST IS NULL");
-   }else{
-    while(temp!=null){
-     if(temp.data==data){
-      System.out.println("Data Found");
-   }
-     break;
+     public void search(int data) {
+        Node temp = first;
+        boolean found = false; // flag to track if data is found
+        if (temp == null) {
+            System.out.println("LIST IS NULL");
+        } else {
+            while (temp != null) {
+                if (temp.data == data) {
+                    System.out.println("Data Found");
+                    found = true;
+                    break;
+                }
+                temp = temp.link;
+            }
+            if (!found) {
+                System.out.println("Data not Found");
+            }
+        }
     }
-    if(temp==null){
-     System.out.println("Data not Found");
-    }
-   }
-  }
+    
      public void Display(){
           if(first==null){
                System.out.println("List is Null");
@@ -142,7 +147,7 @@ import java.util.*;
       public static void main(String [] args){
        Scanner sc= new Scanner(System.in);
        int choice=0;
-       LinkedList ll= new LinkedList();
+       linkedlist ll= new linkedlist();
        
        do{
     System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific \n8.Search the Element");
