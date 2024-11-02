@@ -33,7 +33,7 @@ public class PostFixEvaluation {
         break;
         case '/':result = op1/op2;
         break;
-     }
+     } 
      return result;
     }
     public static void main(String [] args){
