@@ -131,7 +131,21 @@ import java.util.*;
             }
         }
     }
+    public int getPosition(int data) {
+    Node temp = first; 
+    int position = 1; 
+
+    while (temp != null) {
+        if (temp.data == data) {
+            return position;
+        }
+        temp = temp.link;
+        position++; 
+    }
+
     
+    return 1; 
+}
      public void Display(){
           if(first==null){
                System.out.println("List is Null");
@@ -144,13 +158,14 @@ import java.util.*;
                }
           }
      }
+     
       public static void main(String [] args){
        Scanner sc= new Scanner(System.in);
        int choice=0;
        linkedlist ll= new linkedlist();
        
        do{
-    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific \n8.Search the Element");
+    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display  \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific \n8.Search the Element \n9.getPosition");
             choice=sc.nextInt();
             switch(choice){
             case 1:
@@ -188,6 +203,11 @@ import java.util.*;
               int data3= sc.nextInt();
               ll.search(data3);
               break;
+        case 9:
+            System.out.println("Enter the Position  to get");
+            int pos1=sc.nextInt();
+            System.out.println("Position of The element: "+ll.getPosition(pos1));
+            break;
           default:
           System.out.println("Enter the valid Choice");
        }  
