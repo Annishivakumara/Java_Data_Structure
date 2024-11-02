@@ -1,180 +1,125 @@
 import java.util.*;
- class Node{
-      int data;
-      Node link;
- }
-     public class LinkedList{
-      Node node;
-      Node first;
-      Node last;
-      public Node createNode(int data){
-           node=new Node();
-           node.data=data;
-           node.link=null;
-          return node;
-      }
-      public void insertFront(int data){
-           node=createNode(data);
-           if(first==null){
-                first=node;
-                last=node;
-                node.link=first;
-           }
-           else{
-                node.link=first;
-                first=node;
-                last.link=first;
-           }
-      }
-      public void InsertEnd(int data){
-           node= createNode(data);
-           if(first==null){
-                System.out.println("List is Empty");
-           }
-           else{
-                Node temp=first;
-                while(temp.link!=null){
-                     temp=temp.link;
-                }
-                temp.link=node;
-                temp=node;
-                last.link=first;
-           }
-      }
-      public void InsertSpecific( int pos, int data){
-           node= createNode(data);
-           if(pos<1){
-                System.out.println("Enter Valid Position");
-           }
-           else if(pos==1){
-                 node.link=first;
-                 first=node;
-           }
-           else{
-               Node current=first;
-               int count=1;
-               while(current !=null && count<pos-1){
-                    current=current.link;
-                    count++;
-               }
-               if(current==null){
-                    System.out.println("Postion wrong");
-               }else{
-               node.link=current.link;
-               current.link=node;}
-           }
-         }
-     public void DeleteFront() {
+
+class Node {
+    int data;
+    Node link;
+}
+
+public class cirlinkedlist {
+    Node first, last;
+
+    public Node createNode(int data) {
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.link = null;
+        return newNode;
+    }
+
+    public void insertfront(int data) {
+        Node node = createNode(data);
         if (first == null) {
-            System.out.println("List is empty");
+            first = last = node;
+            node.link = first;
         } else {
-            System.out.println("Deleted data " + first.data);
-            if (first == last) {
-                first = last = null; 
-            } else {
-                first = first.link;
-                last.link = first; 
-            }
+            node.link = first;
+            first = node;
+            last.link = first;
         }
     }
-      public void DeleteLast() {
+
+    public void insertend(int data) {
+        Node node = createNode(data);
+        if (first == null) {
+            first = last = node;
+            node.link = first;
+        } else {
+            last.link = node;
+            last = node;
+            last.link = first;
+        }
+    }
+
+    public void deletefront() {
         if (first == null) {
             System.out.println("List is empty");
         } else if (first == last) {
-            System.out.println("Deleted data > " + last.data);
+            System.out.println("Data deleted: " + first.data);
+            first = last = null;
+        } else {
+            System.out.println("Data deleted: " + first.data);
+            first = first.link;
+            last.link = first;
+        }
+    }
+
+    public void deletelast() {
+        if (first == null) {
+            System.out.println("List is empty");
+        } else if (first == last) {
+            System.out.println("Data deleted: " + first.data);
             first = last = null;
         } else {
             Node temp = first;
             while (temp.link != last) {
                 temp = temp.link;
             }
-            System.out.println("Deleted data > " + last.data);
+            System.out.println("Data deleted: " + last.data);
             last = temp;
-            last.link = first; 
+            last.link = first;
         }
     }
-     public void DeletedAtSpecific(int pos){
-          if(first==null){
-               if(pos<1){
-               System.out.println("Enter the Valid posiion");
-               System.out.println("List is Null");
-          }
-          }
-          else if(pos==1){
-               System.out.println("Deleted data > "+first.data);
-            first=first.link;
-          }
-          else{
-               Node Current=first;
-               int count=1;
-               while(Current!=null && count< pos-1){
-                    Current=Current.link;
-                    count++;
-               }
-               if(Current ==null ||  Current.link==null){
-                    System.out.println("Enter the valid postion");
-               }
-               else{
-                    System.out.println("deleted pos"+pos+ " " +Current.link.data);
-                    Current.link=Current.link.link;
-               }
-          }
-     }
-     public void Display(){
-          if(first==null){
-               System.out.println("List is Null");
-          }
-          else{
-               Node temp=first;
-               while(temp.link!=null){
-                    System.out.println("data in list > "+temp.data);
-                    temp=temp.link;
-               }
-          }
-     }
-      public static void main(String [] args){
-       Scanner sc= new Scanner(System.in);
-       int choice=0;
-       LinkedList ll= new LinkedList();
-       
-       do{
-    System.out.println("Enter the choice \n1.Insert Front \n2.Delete Front\n3.Display \n4.InsertAt end\n5.delete End\n6.Insert At specific \n7.Delete at Specific ");
-            choice=sc.nextInt();
-            switch(choice){
-            case 1:
-                 System.out.println("Enter the Data");
-                 int data=sc.nextInt();
-                 ll.insertFront(data);
-                 break;
-           case 2:
-                ll.DeleteFront();
-                break;
-           case 3:
-                ll.Display();
-                break;
-          case 4:
-               System.out.println("Ente the data");
-               int data1=sc.nextInt();
-               ll.InsertEnd(data1);
-               break;
-          case 5:
-               ll.DeleteLast();
-               break;
-          case 6:
-               System.out.println("Enter the \n 1.Position \n 2.Data");
-               int pos=sc.nextInt();
-               int data2 =sc.nextInt();
-               ll.InsertSpecific(pos,data2);
-               break;
-          case 7:
-               System.out.println("Ente the \n 1.Position ");
-               int pos2=sc.nextInt();
-               ll.DeletedAtSpecific(pos2);
-               break;
-          default:
-          System.out.println("Enter the valid Choice");
-       }  
-       }while(choice<=8);
-       
-      }
- }
+
+    public void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+        } else {
+            Node temp = first;
+            do {
+                System.out.println("Data in the list: " + temp.data);
+                temp = temp.link;
+            } while (temp != first);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        cirlinkedlist cs = new cirlinkedlist();
+        int choice;
+        do {
+            System.out.println("\nMenu:");
+            System.out.println("1. Insert at front");
+            System.out.println("2. Insert at end");
+            System.out.println("3. Delete from front");
+            System.out.println("4. Delete from end");
+            System.out.println("5. Display list");
+            System.out.println("Enter your choice (or enter a number > 5 to exit):");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter the data");
+                    int data1 = sc.nextInt();
+                    cs.insertfront(data1);
+                    break;
+                case 2:
+                    System.out.println("Enter the data");
+                    int data2 = sc.nextInt();
+                    cs.insertend(data2);
+                    break;
+                case 3:
+                    cs.deletefront();
+                    break;
+                case 4:
+                    cs.deletelast();
+                    break;
+                case 5:
+                    cs.display();
+                    break;
+                default:
+                    System.out.println("Exiting...");
+            }
+        } while (choice >= 1 && choice <= 5);
+
+        sc.close();
+    }
+}
