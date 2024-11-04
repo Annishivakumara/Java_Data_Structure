@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class Queue{
 int front , rear, size;
@@ -45,7 +46,7 @@ public  void Display(){
     }
 }
 public int  size(){
-    return rear+1;
+    return rear-front+1;
 }
 public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
