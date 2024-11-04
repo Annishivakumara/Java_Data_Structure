@@ -3,7 +3,7 @@ import java.util.*; // importing java pacakage
 public class stack {
     int size ; // size  of the array declaration
     int top;  //  top  represents index value o fthe array
-    int[] number ;  // array declaration 
+    int[] number ;  // array declaration  
     public stack(int size){  // constructor 
         this.size=size;
         top=-1;  // top first value is -1
@@ -51,6 +51,9 @@ public class stack {
     public int Top(){
        return number[top]; 
     }
+    public int size(){
+        return top+1;
+    }
     
     public void display(){
         if(top==-1){
@@ -70,7 +73,7 @@ public class stack {
         stack st= new stack(size);
         int choice=0;
         do{
-             System.out.println("Enter  the  Choice  \n1. Push  \n2. Pop  \n3. Disply");
+             System.out.println("Enter  the  Choice  \n1. Push  \n2. Pop  \n3. Disply \n4. Top elemnt \n5. Stack Size");
             choice=sc.nextInt();
             switch (choice) {
                 case 1:
@@ -85,11 +88,14 @@ public class stack {
                     st.display();
                     break;
                 case 4:
-                    st.Top();
+                    System.out.println("Top elemnt int the Stack: > " +st.Top());
                     break;
+                case 5:
+                     System.out.println("Stack Size:> "+st.size());
+                     break;
                      default:
                      System.out.println("Please Enter valid choice");
             }
-        }while(choice<=4);    
+        }while(choice<=6);    
     }
 }
