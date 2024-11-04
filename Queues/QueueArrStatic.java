@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class Queue{
 int front , rear, size;
@@ -10,7 +11,7 @@ int [] arr;
     }
 public void enque(int data ){
     if(rear==size-1){
-        System.out.println("Queue  Full");
+        System.out.println("Queue  Overflow");
     }
     else if(rear==-1 && front==-1){
         rear=front=0;
@@ -26,8 +27,9 @@ public void Deque(){
         System.out.println("Queue is Empty");
     }
     else if(rear==front){
-        System.out.println("Deleted data >> " +arr[front]);
+        System.out.println("Deleted data :"+arr[front]);
         front=rear=-1;
+       
     }
     else{
          System .out.println("deleted queue is  >>"+arr[front++]);    
@@ -42,6 +44,9 @@ public  void Display(){
         System.out.println(arr[i]);
         }
     }
+}
+public int  size(){
+    return rear+1;
 }
 public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
@@ -64,6 +69,9 @@ public static void main(String [] args){
                     break;
                 case 3:
                     obj.Display();
+                    break;
+                case 4:
+                    System.out.println("Size of the elemnt: "+obj.size());
                     break;
                 default:
                       System.out.println("Enter the valid Choice");
