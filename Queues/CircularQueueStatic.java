@@ -1,4 +1,4 @@
-package Queue;
+
 import java.util.*;
 public class cirqueue{
 int front , rear, size;
@@ -47,6 +47,9 @@ public  void Display(){
       }
     }
 }
+public int size(){
+    return rear-front+1;
+}
 public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
           System.out.println("Enter The Size of The  Circular Queue");
@@ -70,6 +73,8 @@ public static void main(String [] args){
                     obj.Display();
                     break;
                 case 4:
+                    System.out.println("Size of the queue "+obj.size());
+                    break;
                 default:
                       System.out.println("Enter the valid Choice");
             }
