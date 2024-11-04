@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class Queue{
 int front , rear, size;
