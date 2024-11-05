@@ -56,7 +56,8 @@ import java.util.*;
                     System.out.println("Postion wrong");
                }else{
                node.link=current.link;
-               current.link=node;}
+               current.link=node;
+               }
            }
       }
       public void DeleteFront(){
