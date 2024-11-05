@@ -68,6 +68,71 @@ public class cirlinkedlist {
             last.link = first;
         }
     }
+    public void insertAtPosition(int data, int position) {
+        Node node = new Node(data);
+
+        // If list is empty or position is 1, insert at the front
+        if (first == null || position == 1) {
+            if (first == null) {
+                first = last = node;
+                node.link = first; // Point to itself
+            } else {
+                node.link = first;
+                first = node;
+                last.link = first; // Update last to point to new first
+            }
+            return;
+        }
+
+        Node temp = first;
+        int count = 1;
+
+        // Traverse to the position just before the desired position
+        while (count < position - 1 && temp.link != first) {
+            temp = temp.link;
+            count++;
+        }
+        if(temp==null){
+        System.out.println("NO list");
+        }
+           
+            node.link = temp.link;
+            temp.link = node;
+    }
+     public void deleteAtPosition(int position) {
+        if (first == null) {
+            return;
+        }
+
+        if (position == 1) {
+            if (first == last) {
+                first = last = null;
+            } else {
+                first = first.link;
+                last.link = first;
+            }
+            return;
+        }
+
+        Node temp = first;
+        int count = 1;
+
+        while (count < position - 1 && temp.link != first) {
+            temp = temp.link;
+            count++;
+        }
+
+        if (temp.link == first) {
+            return;
+        }
+
+        Node nodeToDelete = temp.link;
+        if (nodeToDelete == last) {
+            last = temp;
+        }
+        temp.link = nodeToDelete.link;
+    }
+}
 
     public void display() {
         if (first == null) {
