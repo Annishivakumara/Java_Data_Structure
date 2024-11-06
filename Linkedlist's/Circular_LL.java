@@ -1,13 +1,10 @@
 import java.util.*;
-
 class Node {
     int data;
     Node link;
 }
-
 public class cirlinkedlist {
     Node first, last;
-
     public Node createNode(int data) {
         Node newNode = new Node();
         newNode.data = data;
