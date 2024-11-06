@@ -33,7 +33,6 @@ public class cirlinkedlist {
             last.link = first;
         }
     }
-
     public void deletefront() {
         if (first == null) {
             System.out.println("List is empty");
@@ -46,7 +45,6 @@ public class cirlinkedlist {
             last.link = first;
         }
     }
-
     public void deletelast() {
         if (first == null) {
             System.out.println("List is empty");
@@ -78,10 +76,8 @@ public class cirlinkedlist {
             }
             return;
         }
-
         Node temp = first;
         int count = 1;
-
         // Traverse to the position just before the desired position
         while (count < position - 1 && temp.link != first) {
             temp = temp.link;
@@ -90,7 +86,6 @@ public class cirlinkedlist {
         if(temp==null){
         System.out.println("NO list");
         }
-           
             node.link = temp.link;
             temp.link = node;
     }
@@ -116,11 +111,9 @@ public class cirlinkedlist {
             temp = temp.link;
             count++;
         }
-
         if (temp.link == first) {
             return;
         }
-
         Node nodeToDelete = temp.link;
         if (nodeToDelete == last) {
             last = temp;
@@ -128,7 +121,6 @@ public class cirlinkedlist {
         temp.link = nodeToDelete.link;
     }
 }
-
     public void display() {
         if (first == null) {
             System.out.println("List is empty");
@@ -140,7 +132,6 @@ public class cirlinkedlist {
             } while (temp != first);
         }
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         cirlinkedlist cs = new cirlinkedlist();
@@ -154,7 +145,6 @@ public class cirlinkedlist {
             System.out.println("5. Display list");
             System.out.println("Enter your choice (or enter a number > 5 to exit):");
             choice = sc.nextInt();
-
             switch (choice) {
                 case 1:
                     System.out.println("Enter the data");
