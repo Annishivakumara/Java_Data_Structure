@@ -11,7 +11,6 @@ public class cirlinkedlist {
         newNode.link = null;
         return newNode;
     }
-
     public void insertfront(int data) {
         Node node = createNode(data);
         if (first == null) {
@@ -23,7 +22,6 @@ public class cirlinkedlist {
             last.link = first;
         }
     }
-
     public void insertend(int data) {
         Node node = createNode(data);
         if (first == null) {
