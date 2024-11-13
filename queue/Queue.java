@@ -1,4 +1,4 @@
-package queue;
+pacakage queue;
 import java.util.*;
 public class Queue{
 int front , rear, size;
@@ -43,6 +43,9 @@ public  void Display(){
         }
     }
 }
+    public int Size(){
+    return (rear-front)+1;
+    }
 public static void main(String [] args){
         Scanner sc= new Scanner(System .in);
         System.out.println("Enter The Size Of the Queue");
@@ -51,7 +54,7 @@ public static void main(String [] args){
         
         int choice;
         do{
-            System.out.println("Enter the choice  \n1.Insert The Data \n2.Delete Data \n3.Display");
+            System.out.println("Enter the choice  \n1.Insert The Data \n2.Delete Data \n3.Display  \n3.Size ");
             choice =sc.nextInt();
             switch (choice) {
                case 1:
@@ -64,6 +67,9 @@ public static void main(String [] args){
                     break;
                 case 3:
                     obj.Display();
+                    break;
+                case 4:
+                   System.out.println(obj.Size());
                     break;
                 default:
                       System.out.println("Enter the valid Choice");
