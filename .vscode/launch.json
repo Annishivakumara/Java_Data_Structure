@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QueueUsingSlist",
+            "request": "launch",
+            "mainClass": "Linkedlist.QueueUsingSlist",
+            "projectName": "Java_Data_Structure_d4f31a76"
+        },
+        {
+            "type": "java",
+            "name": "LinkedList",
+            "request": "launch",
+            "mainClass": "Linkedlist.LinkedList",
+            "projectName": "Java_Data_Structure_d4f31a76"
+        },
+        {
+            "type": "java",
+            "name": "StackUsingSinglyList",
+            "request": "launch",
+            "mainClass": "Linkedlist.StackUsingSinglyList",
+            "projectName": "Java_Data_Structure_d4f31a76"
+        },
+        {
+            "type": "java",
+            "name": "DoublyLinkedList",
+            "request": "launch",
+            "mainClass": "Linkedlist.DoublyLinkedList",
+            "projectName": "Java_Data_Structure_d4f31a76"
+        },
+        {
+            "type": "java",
             "name": "avl",
             "request": "launch",
             "mainClass": "avl",
