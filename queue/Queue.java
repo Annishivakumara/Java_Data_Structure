@@ -17,7 +17,7 @@ public void enque(int data ){
         rear=front=0;
         arr[rear]=data;
     }
-    else{
+    else{  
         rear+=1;
         arr[rear]=data;
     }
