@@ -1,4 +1,3 @@
-
 import java.util.*;
 class Node{
   int data;
@@ -13,12 +12,12 @@ class Node{
 public class binarysearchtree{
   Node node;
   Node root;
-  public void insert(int data){
+public void insert(int data){
     node = new Node(data);
     if(root==null){
         root=node;
     }else{
-         Node temp=root;
+        Node temp=root;
         Node cur=null;
         while(temp!=null){
             cur =temp;
@@ -65,33 +64,37 @@ public class binarysearchtree{
         pre(root.right);
     }
   }
-       public void search(int data){
-        Node temp=root;
+public void search(int data){
         if(root==null){
             System.out.println("Tree Empty ");
         }else{
+            Node temp=root;
             while(temp!=null){
-                if(data<temp.data){
+                    if(data>temp.data){
                     if(data==temp.data){
                         System.out.println("Data Found:  ");
                         break;
                     }
-                    temp=temp.left;
+                     temp=temp.right;
                 }
                 else{
-                    if(data>temp.data){
-                        if(data==temp.data)
+                   
+                    if(data==temp.data){
                         System.out.println("Data Found");
                         break;
                     }
-                   temp= temp.right;
+                   temp= temp.left;
+                    }
+                    if(temp.data!=data){
+                    System.out.println("Data Not Found: ");
+                        break;
+                    }
                 }
+                
             }
-            System.out.println("Data Not Found: ");
-        }
     }
     public void delete(int data){
-
+   
     }
 
     public static void main(String [] args){
@@ -100,7 +103,7 @@ public class binarysearchtree{
          int choice;
          System.out.println("Binary Search Operations");
          do{
-            System.out.println("Ente the Choice \n1.insert \n2.preorder \n3.postorder \n4.inorder \n5.search");
+            System.out.println("Ente the Choice \n1.insert \n2.preorder \n3.postorder \n4.inorder \n5.search \n6.delete");
             choice=scanner.nextInt();
          switch (choice) {
             case 1:
