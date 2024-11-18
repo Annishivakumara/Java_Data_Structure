@@ -85,16 +85,32 @@ public void search(int data){
                     }
                    temp= temp.left;
                     }
-                    if(temp.data!=data){
-                    System.out.println("Data Not Found: ");
-                        break;
-                    }
-                }
-                
+                System.out.println("Data Not Found: ");
+            }
             }
     }
     public void delete(int data){
-   
+      if(root==null){
+          System.out.println("tree  tree empty");
+      }else{
+          Node temp=root;
+          while(temp!=null){
+          if(data>temp.data){
+              if(data==temp.data){
+                  System.out.println("DEleted data "+temp.data);
+                  break;
+              }
+              temp=temp.right;
+          }
+          if(data==temp.data){
+              
+              System.out.println("dleted data"+temp.data);
+         
+              break;
+          }
+          temp=temp.left;
+          }
+    }
     }
 
     public static void main(String [] args){
@@ -127,7 +143,12 @@ public void search(int data){
                 System.out.println("Searched Element");
                 int data2=scanner.nextInt();
                 bst.search(data2);
-                break;         
+                break;
+            case 6:
+                System.out.println("Delete operation: ");
+                int del= scanner.nextInt();
+                bst.delete(del);
+                break;
             default:
                 break;
          }
