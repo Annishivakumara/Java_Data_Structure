@@ -1,8 +1,9 @@
+
 package graph;
 import java.util.Scanner;
 import  java.util.ArrayList;
 public class Adjacence_List{
-class Edge{
+static class Edge{
     int src;
     int dest;
     public Edge(int src,int dest){
@@ -35,7 +36,7 @@ public  static  void  creategraph(ArrayList<Edge> graph[]){
         // Print The graph
         for(int i=0;i<graph[2].size();i++){
             Edge e=graph[2].get(i);
-            System.out.println(e.src);
+            System.out.println("srs: "+e.src+ " To  dest: "+e.dest);
         }
     }
 }
