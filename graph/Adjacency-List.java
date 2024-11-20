@@ -1,4 +1,3 @@
-
 package graph;
 import java.util.Scanner;
 import  java.util.ArrayList;
@@ -36,7 +35,7 @@ public  static  void  creategraph(ArrayList<Edge> graph[]){
         // Print The graph
         for(int i=0;i<graph[2].size();i++){
             Edge e=graph[2].get(i);
-            System.out.println("srs: "+e.src+ " To  dest: "+e.dest);
+            System.out.println("srs: "+e.src+ " to  dest: "+e.dest);
         }
     }
 }
