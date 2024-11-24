@@ -78,7 +78,6 @@ public void search(int data){
                      temp=temp.right;
                 }
                 else{
-                   
                     if(data==temp.data){
                         System.out.println("Data Found");
                         break;
@@ -112,7 +111,6 @@ public void search(int data){
           }
     }
     }
-
     public static void main(String [] args){
         Scanner scanner = new Scanner (System.in);
          binarysearchtree bst= new binarysearchtree();
