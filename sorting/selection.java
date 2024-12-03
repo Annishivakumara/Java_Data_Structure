@@ -1,10 +1,13 @@
 
-package  sorting;
 import java.util.*;
 
 public class  selection {
-    int arr[] = new int[5];
-
+    int size;
+    int [] arr;
+    public selection(int size){
+    this.size=size;
+     arr= new int[size];
+}
     public void read() {
         Scanner sc = new Scanner(System.in);  
         System.out.println("Enter the numbers:");
@@ -15,25 +18,30 @@ public class  selection {
 
    public void select(){
     int min;
-    for(int i=0;i<=arr.length;i++){
+    for(int i=0;i<arr.length;i++){
         min=i;
-        for(int j=i+1;j<=arr.length;j++){
+        for(int j=i+1;j<arr.length;j++){
             if(arr[j]<arr[min]){
-                arr[min]=arr[j];
+               min=j;
             }
         }
         int temp=arr[min];
         arr[min]=arr[i];
         arr[i]=temp;
     }
+    System.out.println("Sorted Selection Array");
+    for(int i:arr){
+        System.out.print(i+" ");
+    }
+    System.out.println();
    }
 
     public static void main(String[] args) {
-        selection ls = new selection();
-        ls.read();  
-        Scanner sc = new Scanner(System.in);  
-        //  System.out.println("Enter data to search:");
-        // int data = sc.nextInt();
-        ls.select();  
-    }
+        Scanner sc = new Scanner(System.in); 
+        System.out.println("Enter the Size of the Array: ");
+        int size=sc.nextInt();
+        selection ls = new selection(size);
+         ls.read(); 
+         ls.select(); 
+           }
 }
