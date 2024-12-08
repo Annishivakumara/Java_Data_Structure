@@ -41,7 +41,6 @@ public class margesort {
         arr= new int[size];
     }
     public  void read(){
-        
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter The Array Elements");
     for(int i=0;i<arr.length;i++){
